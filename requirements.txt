@@ -1,0 +1,28 @@
+# Tested with Python 3.12 on Ubuntu 24.04 (WSL2), x86_64.
+# ml-metadata 1.21.0 only ships wheels for Linux x86_64 (glibc >= 2.39) and macOS arm64,
+# for Python 3.10-3.13. It does not install on native Windows.
+
+# CPU-only PyTorch wheels (avoids pulling several GB of CUDA libraries on Linux)
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# Metadata store
+ml-metadata==1.21.0
+protobuf==6.33.6
+
+# Pipeline, analysis and plotting
+numpy==2.5.5
+pandas==3.1.1
+scikit-learn==1.9.1
+joblib==1.6.0
+networkx==3.7
+matplotlib==3.11.2
+
+# Optional dense retriever for run C (all-MiniLM-L6-v2)
+torch==2.15.0
+sentence-transformers==6.3.0
+transformers==5.23.0
+
+# Notebook tooling
+jupyter==1.1.1
+ipykernel==7.4.0
+nbconvert==7.17.2
